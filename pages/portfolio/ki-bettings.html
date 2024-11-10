@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+        <meta charset="utf-8" />
+        <meta http-equiv="content-type" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>Data Display</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!--to use jsx-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="react/components/post-comments.js" type="text/babel"></script>
+
+
+    <style>
+        
+.bars {
+    display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #2500FF;
+  margin-bottom: 3px;
+}
+
+
+
+        body {
+            /*
+	background-image: url('../resources/images/s2.jpg');*/
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 16px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container:hover {
+            background-color: #343642;
+        }
+
+        .data-container {
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+
+            border: 2px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            background-color: #8F00FF;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: #00A2FF;
+        }
+        .toggled {
+            background-color: #81FF00;
+            color: #fFF;
+        }
+        
+        footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    clear: both;
+}
+        
+    /*    footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height:6%;
+            background-color: #00FFFF;
+            color: red;
+            font-size: 20px;
+        }   */
+        
+header {
+    position: fixed ;
+    top:0;
+    height: 13%;
+    width: 100%;
+    background: linear-gradient(to right, #0029FF, #8BC34A ,#FFED00);
+    text-align: center;    
+      
+
+}
+
+header ul{
+ 
+  list-style-type: none;
+  margin: 2px;
+  padding: 2px;
+  overflow: hidden;
+  background-color: ;
+}
+
+header ul li {
+       position: relative;
+       width: 47%;   
+  float: left; padding-right: ; padding-top: 5px;  
+  font-weight: bold;
+  font-family: 'Trebuchet MS', cursive;
+
+}
+
+header ul li a {
+  display: block;
+  color: white;
+  /*text-align: center;*/
+  padding: 14px 16px;
+  text-decoration: none;
+  
+    
+}
+ header  ul li:hover {
+    background-color: #7897FF;
+}   
+        
+
+    </style>
+    <script type="module">
+
+
+
+        const data = [{
+            name: 'John Doe',
+            email: 'john@example.com',
+            phone: '123-456-7890'
+        },
+            {
+                name: 'Jane Doe',
+                email: 'jane@example.com',
+                phone: '987-654-3210'
+            },
+            {
+                name: 'Bob Smith',
+                email: 'bob@example.com',
+                phone: '555-123-4567'
+            },
+        ];
+
+        // Display data in table
+        const dataTable = document.getElementById('data-table');
+        data.forEach((item) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.email}</td>
+            <td>${item.phone}</td>
+            `;
+            dataTable.appendChild(row);
+            console.log("\t"+ row);
+        });
+
+
+        //out of context
+
+        //React.DOM.h1(null,"ok check")
+
+
+        window.addEventListener('DOMContentLoaded', function() {});
+        //betting algorithm starts here.
+        
+              var apiKey = "sfs568//-55";
+
+
+        function getNewFootballApi(apikey1) {
+   
+            
+            fetch(  "https://api.the-odds-api.com/v4/sports/american/odds?" +apikey1+ "=---&regions=us" )
+  .then( data => { console.log(data ); 
+        if(typeof(data) == Array)
+           localStorage.setItem('ourFootballApi' , data).json } )
+  .catch( error => console.error(error) );
+            
+            
+            /*try {
+                var footballData = fetch("https://api.the-odds-api.com/v4/sports/american/odds?" + apikey + "=---&regions=us");
+
+                localStorage.setItem("ourFootballApi", footballData);
+                console.log("this is a new Api"+ localStorage.getItem("ourFootballApi"));
+            } catch(e) {
+                console.log(e);
+            }  */
+        }
+
+getNewFootballApi( apiKey );
+
+        function getFootballApi() {
+            console.log("ourApi is got");
+            let api = localStorage.getItem("ourFootballApi");
+            if (!api == []) {
+                getNewFootballApi();
+            }
+            return api;
+        }
+
+        var sportBook = document.getElementById('sports-book');
+        console.log("footbaĺlData starts now");
+
+        function getTeams(data) {
+            return [data.home_team,
+                data.away_team]
+
+        }
+        function getTitle(data) {
+            return data.sport-key
+        }
+
+        function getOdds(data) {
+            var commonPath = data.bookmakers.markets[0].outcomes;
+            return [commonPath[1].price,
+                'x',
+                commonPath[0].price]
+
+        }
+        function basicOddDisplay([a, b], [x, y, z], title) {
+            const box = document.createElement("div");
+            box.innerHTML = `<p>${title}<p> <table  >
+            <tr  >
+            <th>${a}</th>
+            <th>X</th>
+            <th>${b}</th>
+            </tr>
+            <tr  >
+            <td>${x}</td>
+            <td>${y}</td>
+            <td>${z}</td>
+            </tr>
+
+            </table>
+            <a href="#"><h6>and more</h6></a>
+            `
+            box.className = "container"
+
+            console.log('hello am here');
+            sportBook.appendChild(box);
+
+        }
+
+        basicOddDisplay(["Arsenal", "liverpool"], [1.5, 3.5, 2.0], "Uganda's final");
+
+
+        var fData = getFootballApi();
+        /*fData.forEach(data => {
+    let a = getTeams(data);
+    let b = getOdds(data);
+    let c = getTitle(data);
+basicOddDisplay(a,b,c) } );*/
+
+        //[1,2,3,4].forEach( a => { let w = " water"; console.log(a+w); } );
+
+        //change of color for every every selected bet
+
+        // Function to toggle button color
+        function toggleButtonColor(button) {
+            // Check if the button has a "toggled" class
+            if (button.classList.contains('toggled')) {
+                // If it does, remove the class (and the color)
+                button.classList.remove('toggled');
+            } else {
+                // If it doesn't, add the class (and the color)
+                button.classList.add('toggled');
+            }
+        }
+
+        var selected = document.querySelectorAll("td");
+        selected.forEach(a => {
+            a.addEventListener('click', () => {
+                toggleButtonColor(a)
+            });
+
+        }
+        );
+
+        //mybets starts here
+
+
+
+        var mybets = document.querySelectorAll('.toggled');
+        console.log(typeof(mybets)+"\t "+ mybets);
+
+
+        function displayMyBets(data, container) {
+            data.forEach(a => {
+                let betBoard = document.createElement('div');
+                betBoard.className = "betBoard";
+                betBoard.innerHTML = `
+                <p>${a}</p>
+                `;
+
+                container.appendChild(betBoard);
+            });
+        }
+
+        displayMyBets(['waa', "it time"], document.getElementById("mybets"));
+
+        //mybets are stored in the session storage
+        sessionStorage.setItem('mybets', mybets);
+        console.log(sessionStorage.getItem('mybets'));
+
+        //cookies for store authetications and encryption
+        document.cookie = 'username=scopeclient;sessionKey=rf45fhjhf53@/5;publicKey=7';
+
+        var cc = document.cookie.split(";");
+        console.log("our cookies... "+cc);
+        
+        var word = document.getElementById('lastWords');
+        
+        var text ="....       hello             this is just a demo progaram.@@$... so, some functions don't work..😂😂😂😱😱      ";
+        var index = 0  ;
+       //var interval = 
+       setInterval(() => {
+        word.textContent = text.substring(index -35, index + 1);
+        //word.style.left = `${/*index */ 20}px`;
+        index++;
+        
+        
+        if (index > text.length) {
+            index = 0;
+            word.textContent = '';
+           
+        }
+    }, 300);
+    
+
+        var woo = [];
+        console.log("done "+ woo);
+
+    </script>
+
+</head>
+<body>
+
+<header>
+    <ul>
+            <li>K.I </br> BET </br> <span> now</span></li> 
+                <li  style="   "  >     <span class = "bars" ></span>
+      <span class = "bars" ></span>
+      <span class = "bars" ></span>
+      </li>
+    </ul>
+</header>
+    <div id="mybets"></div>
+
+    <div class="container">
+        <div class="data-container">
+            <h1>Our Top winners This Week</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table">
+                    <!-- Data will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    <div>
+        <h1>KI BETTING HOUSE</h1>
+        <h3>Play only one game to become rich</h3>
+    
+      
+        <table>
+            <tr>
+                <th>homeTeam</th>
+                <th>X</th>
+                <th>awayTeam</th>
+            </tr>
+            <tr>
+                <th>homeTeamOdds</th>
+                <th>drawOdds</th>
+                <th>awayTeamOdds</th>
+            </tr>
+
+
+        </table>
+    </div>
+    <div id="sports-book">
+
+    </div>
+    
+
+
+    <div>
+        <img src="../../resources/images/ki1.jpg" height="150" width="300" id="advert" alt="our top winners" />
+    </div>
+
+     <script src="script.js"></script>
+    <p id="lastWords" ></p>
+    
+    <footer>
+        <p>&copy; 2024 ki betting house. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
+

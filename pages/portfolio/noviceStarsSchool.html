@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursery School Website</title>
+    <style>
+        /* Color Scheme */
+-primary-color: #6495ED; /* Blue */
+-secondary-color: #C7B8EA; /* Purple */
+-accent-color: #FFC5C5; /* Pink */
+-background-color: #F7F7F7; /* Light Gray */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7F7F7;
+}
+
+header {
+    background-color: #6495ED;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #6495ED;
+}
+
+button {
+    background-color: #C7B8EA;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FFC5C5;
+}
+
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #6495ED;
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to Novice Stars Nursery School</h1>
+            <p>Where learning meets fun!</p>
+            <button>Learn More</button>
+    
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We provide a nurturing environment for children to grow and develop.</p>
+            <img src="../../resources/images/novice-star1.jpg" alt="Nursery School Image">
+        </section>
+        <section id="programs">
+            <h2>Programs</h2>
+            <ul>
+                <li>Infant Care (6 weeks - 12 months)</li>
+                <li>Toddler Care (1 - 2 years)</li>
+                <li>Preschool (3 - 5 years)</li>
+            </ul>
+                    <img src="../../resources/images/novice-star2.jpg">
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Phone: 555-555-5555 | Email: [info@novicest****.com](mailto:info@novi****.com)</p>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button>Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Novice stars Nursery School</p>
+    </footer>
+</body>
+</html>

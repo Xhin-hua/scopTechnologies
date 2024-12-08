@@ -1,0 +1,199 @@
+<!doctypeHTML>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="content-type" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
+        <title>application form for website Development,hoisting, domain Name and mentainance </title>
+        <link rel="stylesheet" type="text/css" href="../resources/css/designs.css">
+        <!--this script works best here thanls-->
+        <script src="../resources/js/improved.js"></script>
+        
+        <script >
+            
+window.addEventListener('DOMContentLoaded', function(){
+    
+    
+    console.log("hello\n\tam here to improve....");
+    
+
+/*here the user submits their own request... */
+
+
+    var name = document.getElementById('name').value  ;  
+    var email = document.getElementById('email').value  ;
+      var service = document.getElementById('service').value  ;
+        var projectDesciption = document.getElementById('projectDescription').value  ;
+          var fileUpload = document.getElementById('fileUpload').value  ;
+            var budget = document.getElementById('budget').value  ;
+          var timeline = document.getElementById('timeline').value  ;
+        
+     
+  var whatsapp1 =  "scope techinologies application form\n" +name+"\n"+email+"\n"+service+"\n"+projectDesciption+"\n"+budget+"\n"+timeline+"\n"+fileUpload  ;
+    
+    
+ 
+        var submiter = document.getElementById("submiter");
+        submiter.addEventListener('click',e => sendToScope(whatsapp1)  );
+
+
+            
+    
+} );
+
+        </script>
+        
+        
+
+        
+        
+        
+    </head>
+    <body class="main">
+      <div class="topbar" > <a href="#home">Scop Technologies™</a>
+</div>
+      
+        
+
+    
+        <p id="bbs">    
+Please fill this form
+    </p>
+        <p> <button class="allbuttons">OR</button> you can pick from these  
+        </p>
+        <p >
+          <a href="design_plans.html" >PROMOTIONAL PLANS</a> </p>
+
+<button   class="allbuttons">APPLICATION FORM</button>
+<p class="allarticles">
+<form class="allarticles" id="clientForm">
+    
+<div>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" >
+</div>
+
+<div>
+<label for="email">Email Address:</label>
+<input type="email" id="email" name="email" required>
+</div>
+
+<div>
+<label for="phone">Phone Number:</label>
+<input type="tel" id="phone" name="phone">
+</div>
+
+<div>
+<label for="service"  >Select Service(s) of Interest:</label>
+<select id="service" name="service" required>
+<option value="">Select Service</option>
+<option value="web-development">Web Development</option>
+<option value="domain-registration">domain name domain-registration</option>
+<option value="web-hoisting">web hoisting</option>
+<option value="api intergration">API intergration</option>
+<option value="other">Other</option>
+</select>
+</div>
+
+<div>
+<label for="project-description">Project Description:</label>
+<textarea id="projectDescription" name="project-description" rows="5" required></textarea>
+</div>
+
+<div>
+<label for="file-upload">Upload Relevant Files:</label>
+<input type="file" id="fileUpload" name="file-upload">
+</div>
+
+<div>
+<label for="budget">Budget:</label>
+<input type="number" id="budget" name="budget">
+</div>
+
+<div>
+<label for="timeline">Timeline:</label>
+<input type="date" id="timeline" name="timeline">
+</div>
+
+<div>
+<input type="checkbox" id="terms" name="terms" required>
+<label for="terms">I agree to Scop Technologies' Terms and Conditions</label>
+</div>
+
+<button id="submiter" type="submit">Submit</button>
+</form>
+
+
+
+   
+    <!-- WhatsApp Widget Container -->
+    <div id="whatsapp-widget" class="whatsapp-widget">
+        <a href="https://wa.me/+256740772579"  class="whatsapp-button">
+            <i class="fa fa-whatsapp"></i>
+            Contact Us on WhatsApp
+        </a>
+    </div>
+    <p>
+     <a href="design_plans.html" >Would you like to know about our promotional plans...!</a></p>
+    
+<!animated whatsapp...>
+    <div  href="https://wa.me/+256740772579"  class="whatsappContainer">
+        <img  href="https://wa.me/+256740772579"  class="wbutton" src="../resources/images/Whatsapp2.jpg">
+        
+        <span "https://api.whatsapp.com/send?phone=+256740772579" class="word"></span>
+    </div>
+        <script >
+        console.log("am writing the phoneNumber");
+        const button = document.querySelector('.wbutton');
+const word = document.querySelector('.word');
+const text = '+256740772579      ';
+
+let index = 0;
+let interval;
+
+document.body.addEventListener('animationstart', () => {
+    interval = setInterval(() => {
+        word.textContent = text.substring(0, index + 1);
+        word.style.left = `${/*index */ 20}px`;
+        index++;
+        
+        if (index > text.length) {
+            index = 0;
+            word.textContent = '';
+           
+        }
+    }, 300);
+});
+
+button.addEventListener('animationend', () => {
+    clearInterval(interval);
+});
+    </script>
+     
+   
+    <footer class="bottombelt">    
+    </br>
+    <div style="text-align: center;" ><a href="additional_pages.html"><b>FAQ</b></a></div>
+    
+    </br></hr>
+    
+CONTACT INFORMATION : <ul><li> <a href=" tel : +256740772579" > +256 740 772579</a></li>
+    <li><a href="tel:+256766239507" >+256 766 239507</a></li></ul>
+EMAIL ADDRESS : <a href="mailto : sco500pe@gmail.com">sco500pe@gmail.com</a></br>
+PHYSICAL ADDRESS : <address>Africa[uganda],Mukono district... kilowooza street</address></br>
+
+
+<h5>Social Media Links</h5>
+
+
+[Facebook] [x] [LinkedIn] [Instagram]
+</br>
+<a href="blog.html">stay updated about our services</a>
+
+        </p>
+        <p><a href="terms_and_conditions.html">T & C</a> and <a href="privacy_policy.html">privacy policy</a></p>
+    
+    
+    </footer>
+</body>
+</html>

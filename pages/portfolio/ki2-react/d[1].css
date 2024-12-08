@@ -1,0 +1,174 @@
+/* Top Nav */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #03055B; /* dark blue */
+  color: #ffffff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0056b3;
+}
+
+.top-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.top-nav ul :hover{
+    background-color: #868FFF;
+}
+
+.top-nav li {
+  margin-right: 20px;
+}
+
+.top-nav li:not(:last-child) {
+  border-right: 1px solid #0056b3;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+  position: fixed;
+  top: 50px; /* adjust to the height of your top nav */
+  left: 0;
+  width: 80px; /* adjust the width as needed */
+  background-color: #7A288A; /* purple */
+  color: #ffffff;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.left-sidebar ul:hover{
+    background-color: #FA9AFF;
+}
+
+.left-sidebar li {
+  margin-bottom: 20px;
+}
+
+/* Main Content */
+.main-content {
+  position: absolute;
+  top: 50px; /* adjust to the height of your top nav */
+  left: 80px; /* adjust to the width of your left sidebar */
+  right: 0;
+  bottom: 0;
+  background-color: #34C759; /* green */
+  overflow-y: auto; /* enable vertical scrolling */
+  padding: 20px;
+}
+
+.main-content:hover{
+    background-color: #A8E87C;
+}
+
+.registration-form{
+    
+}
+
+
+
+form {
+max-width: 600px;
+margin: 40px auto;
+padding: 20px;
+border: 1px solid #ddd;
+
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+
+	background-color: #00C6FF;
+	padding: 16px;
+	border-radius: 20px;
+
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+}
+
+textarea {
+resize: vertical;
+}
+
+button[type="submit"] {
+background-color: #4CAF50;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button[type="submit"]:hover {
+background-color: #3e8e41;
+}
+
+.oddsbox{
+    border-radius: 40px;
+    
+}
+.oddsbox :hover {
+    background-color: #84AAFF;
+    width: 80%;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+.oddsbox th {
+    text-align: left;
+    color: white;
+    background-color: #0024FF;
+}
+.oddsbox td{
+    text-align: center;
+    color: white;
+    background-color: #0024FF;
+    font-weight: bold;
+}
+
+.toggled{
+    background-color: #00FF07;
+}
+
+.bookmakers{
+    border-radius: 40px;
+    background-color: #004CFF;
+    animation: slide 2s ease-in-out;
+    margin: 20px;
+    align-content: center;
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #00DEFF;
+    width: 100%;
+    height: 30px;
+}
+
+@keyframes slide{
+    0%{left:0; }
+    50%{left:100%; }
+}

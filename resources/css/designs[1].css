@@ -1,0 +1,392 @@
+
+
+.topbar{
+     position: fixed; overflow: hidden; top: 0; width: 100%;  text-align-last: center;
+    
+      font-size: 40px;
+
+  font-weight: bold;
+  font-family: 'Great Vibes', cursive;
+  background: linear-gradient(to right, #0029FF, #8BC34A ,#FFED00);
+    
+}
+   
+.topbar ul{
+  list-style-type: none;
+  margin: 2px;
+  padding: 2px;
+  overflow: hidden;
+  background-color: blue;
+}
+
+ .topbar ul li {
+  float: left; padding-right: 8px;
+}
+
+topbar ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ topbar  ul li a:hover {
+    background-color: #00FFE9;
+} 
+
+header {
+    position: fixed ;
+    top:0;
+    height: 13%;
+    width: 100%;
+    background: linear-gradient(to right, #0029FF, #8BC34A ,#FFED00);
+    text-align: center;    
+      
+
+}
+
+header ul{
+ 
+  list-style-type: none;
+  margin: 2px;
+  padding: 2px;
+  overflow: hidden;
+  background-color: ;
+}
+
+header ul li {
+       position: relative;
+         
+  float: left; padding-right: ; padding-top: 5px;  
+  font-weight: bold;
+  font-family: 'Great Vibes', cursive;
+
+}
+
+header ul li a {
+  display: block;
+  color: white;
+  /*text-align: center;*/
+  padding: 14px 16px;
+  text-decoration: none;
+  
+    
+}
+/* header  ul li:hover {
+    background-color: #7897FF;
+}   */
+
+.bars {
+    display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #2500FF;
+  margin-bottom: 3px;
+}
+
+.getstartedbar{
+    background-color: #005FFF; height: 6%; position: fixed; width: 40%; bottom: 0; border: none; border-radius: 70px; font-size: 100%; 
+    
+     
+  font-weight: bold;
+  font-family: 'Great Vibes', cursive;
+  background: linear-gradient(to right, #FFFFFF , #000DFF , #FFFFFF);
+}
+.main{       background-color: #AAAAAA;
+    margin-top: 65px ; margin-bottom: 40px;
+       display: inline-block;
+}
+
+
+
+
+.main span {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.1s ease-out;
+}
+
+.main span:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.main span:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.main span:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.main:hover span,
+.main:focus span {
+  opacity: 1;
+  transform: translateX(0);}
+  
+h1{
+    color: #FF00CD;
+}
+h2 {
+    color: #0066FF;
+}
+
+h3 {
+    color: #2D00FF;
+}
+
+img {
+      image-rendering: -webkit-optimize-contrast;
+}
+.bottombelt{ background-color: #22264B; color: white; width:100%;
+     border-radius: 10px;
+    box-shadow: 0 0 10px #7B8CCE;
+}
+.allbuttons{ text-align: center;
+    background-color: #0045FF; color: white; border: none; border-radius: 5px; height: 30px;
+}
+.allarticles{
+    border-top: 3px solid; border-top-color: #0045FF; color:#44FFA2; margin-top: 0;
+}
+.searchbar { width: 40%; height: 100%;margin-left: 50%; align-content: center;
+    
+}
+.sc{ height: 100%; color: #FF00DB;
+    width: 50%;  align-content: center; padding-top: 50%; font-size: 80%;
+}
+.profile-pics {
+    border-radius: 20px ;
+}
+
+/* these are for the get started form */
+
+
+form {
+max-width: 600px;
+margin: 40px auto;
+padding: 20px;
+border: 1px solid #ddd;
+
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+
+	background-color: #00C6FF;
+	padding: 16px;
+	border-radius: 20px;
+
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+}
+
+input, select, textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+}
+
+textarea {
+resize: vertical;
+}
+
+button[type="submit"] {
+background-color: #4CAF50;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button[type="submit"]:hover {
+background-color: #3e8e41;
+}
+
+/*these design the cantacts area*/
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+i {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+address {
+  font-style: normal;
+}
+
+
+        /* WhatsApp Widget Styles */
+        .whatsapp-widget {
+            position: sticky;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .whatsapp-button {
+            background-color: #25D366; /* WhatsApp green */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #2EC866; /* WhatsApp green hover */
+        }
+/*animated WhatsApp button....*/
+ 
+.whatsappContainer {
+    
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+}
+
+.wbutton {
+    position: relative;
+    top: 5%;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: move 6s infinite linear;
+}
+
+.word {
+    position: fixed;
+    top: 5%;
+    left: 0;
+    font-size: 35px;
+    font-weight: bold;
+    color: #EE00FF;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
+   
+  /* Pricing Plans Section */
+.pricing-plans {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+  border-radius: 20px;
+}
+
+.pricing-plans h2 {
+
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-align : center ;
+}
+
+.plan-card {
+    
+     margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+
+
+.plan-card h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+ 
+}
+
+.plan-card p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.plan-card ul {
+    
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-card li {
+  margin-bottom: 10px;
+}
+
+.plan-card button {
+  background-color: #0015FF;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.plan-card button:hover {
+  background-color: #B8C5FF;
+}
+
+
+
+.horizontal-scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.horizontal-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+}
+
+.promo{
+    -webkit-animation: shake1 1s infinite 0.5s ;
+    animation: shake1 1s infinite 0.5s ;
+}
+@keyframes shake1{
+    0%{
+         transform: translate(0px, 0px);
+    }
+    50%{
+         transform: translate(20px, 0px);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
